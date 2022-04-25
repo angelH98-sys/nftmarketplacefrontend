@@ -1,0 +1,86 @@
+<div [className]="isProjectsLoaded ? 'visually-hidden' : 'row'">
+    <h2 class="text-center">Loading...</h2>
+</div>
+
+<div [className]="isProjectsLoaded ? 'row' : 'visually-hidden'">
+    <div class="col-xl-4">
+        <img src={{project.urlimage}} class="rounded mx-auto w-100">
+        <br>
+        <div class="row mt-3">
+            <div class="col-xl-6">
+                <a class="btn btn-primary" href={{project.urlwebsite}} role="button">Website</a>
+            </div>
+            <div class="col-xl-6">
+                <a class="btn btn-primary" href={{project.urlvideo}} role="button">Video</a>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-xl-6">
+                <a class="btn btn-primary" (click)="savePDF()" role="button">Save PDF</a>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="col-xl-8">
+        <h1>
+            {{project.projectname}}
+        </h1>
+        <hr>
+        <p class="text-start">
+            {{project.projectdescription}}
+        </p>
+        <hr>
+        <p>
+            <b>Blockchain </b>{{project.blockchain}}
+            <br>
+            <b>Divisa local </b> {{project.nativecurrency}}
+        </p>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Inversión pendiente
+                    </th>
+                    <th scope="col">
+                        Inversión actual
+                    </th>
+                    <th scope="col">
+                        Inversión total
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{project.pendinginvestment}}</td>
+                    <td>{{project.currentinvestment}}</td>
+                    <td>{{project.totalinvestment}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+
+                    <th scope="col">
+                        Fecha de creación
+                    </th>
+                    <th scope="col">
+                        Fecha de testing
+                    </th>
+                    <th scope="col">
+                        Fecha de lanzamiento
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{project.creationdate}}</td>
+                    <td>{{project.testingdate}}</td>
+                    <td>{{project.releasedate}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+</div>
